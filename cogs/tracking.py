@@ -147,7 +147,7 @@ class TrackingCog(commands.Cog):
         embed.set_footer(text="tracked client-side — Hive's API has no winstreak field")
         await interaction.response.send_message(embed=embed)
 
-    @app_commands.command(description="Show whether a tracked player was recently active (inferred from stat changes, not a real live status)")
+    @app_commands.command(description="Show a best-effort activity status (inferred, not a real live status)")
     @app_commands.describe(name="Minecraft Bedrock username")
     async def online(self, interaction: discord.Interaction, name: str):
         last_active_iso = storage.get_last_active(name)
